@@ -1,67 +1,69 @@
-import {useState} from 'react'
+import React from "react"
 import data from "../../../data/data"
 
-export default function Row() {
-
-  const [probability, setProbability] = useState(new Array(data.length).fill(0));
-  const [impact, setImpact] = useState(new Array(data.length).fill(0));
-  const [risk, setRisk] = useState(new Array(data.length).fill(0));
-
-  const handleChangeProbability = (e, index) => {
-    const updatedCheckState = probability.map((item, i) => 
-        i === index ? e.target.value : item
-    )
-    setProbability(updatedCheckState)
-  }
-  const handleChangeImpact = (e, index) => {
-    const updatedCheckState = impact.map((item, i) => 
-        i === index ? e.target.value : item
-    )
-    setImpact(updatedCheckState)
-  }
-  const handleChangeRisk = (e, index) => {
-    const updatedCheckState = risk.map((item, i) => 
-        i === index ? e.target.value : item
-    )
-    setRisk(updatedCheckState)
-  }
-  
-  console.log("probability: " + probability)
-  console.log("impact: " + impact)
-  console.log("risk: " + risk)
+export default function Row(props) {
 
   return (
-    <div className=''>
-
+    <div className='px-8 pb-8'>
         {
             data.map((item,index) => 
-                <div className='flex flex-row pb-4'>
-                    <div className='w-[20%] px-4 border-2'>
+                <div key={index} className='flex flex-row'>
+                    <div className='flex items-center w-[30%] h-16 px-4 border-b-[1px]'>
                         {item.question}
                     </div>
-                    <div className='flex w-[20%] gap-4 px-4 border-2 border-r-2'>
-                        <input onChange={(e) => handleChangeProbability(e, index)} name={`probability-${index}`} value="1" type="radio"/>
-                        <input onChange={(e) => handleChangeProbability(e, index)} name={`probability-${index}`} value="2" type="radio"/>
-                        <input onChange={(e) => handleChangeProbability(e, index)} name={`probability-${index}`} value="3" type="radio"/>
-                        <input onChange={(e) => handleChangeProbability(e, index)} name={`probability-${index}`} value="4" type="radio"/>
-                        <input onChange={(e) => handleChangeProbability(e, index)} name={`probability-${index}`} value="5" type="radio"/>
+                    <div className='flex w-[15%] justify-around border-slate-300 pr-4 border-b-[1px]'>
+                        <div className="flex justify-center w-full border-l-[1px] bg-slate-200 border-slate-300">
+                            <input onChange={(e) => props.handleChangeProbability(e, index)} name={`probability-${index}`} value="1" type="radio"/>
+                        </div>
+                        <div className="flex justify-center w-full border-l-[1px] bg-slate-200 border-slate-300">
+                            <input onChange={(e) => props.handleChangeProbability(e, index)} name={`probability-${index}`} value="2" type="radio"/>
+                        </div>
+                        <div className="flex justify-center w-full border-l-[1px] bg-slate-200 border-slate-300">
+                            <input onChange={(e) => props.handleChangeProbability(e, index)} name={`probability-${index}`} value="3" type="radio"/>
+                        </div>
+                        <div className="flex justify-center w-full border-l-[1px] bg-slate-200 border-slate-300">
+                            <input onChange={(e) => props.handleChangeProbability(e, index)} name={`probability-${index}`} value="4" type="radio"/>
+                        </div>
+                        <div className="flex justify-center w-full border-l-[1px] border-r-[1px] bg-slate-200 border-slate-300">
+                            <input onChange={(e) => props.handleChangeProbability(e, index)} name={`probability-${index}`} value="5" type="radio"/>
+                        </div>
                     </div>
-                    <div className='flex w-[20%] gap-4 px-4 border-2'>
-                        <input onChange={(e) => handleChangeImpact(e, index)} name={`impact-${index}`} value="1" type="radio"/>
-                        <input onChange={(e) => handleChangeImpact(e, index)} name={`impact-${index}`} value="2" type="radio"/>
-                        <input onChange={(e) => handleChangeImpact(e, index)} name={`impact-${index}`} value="3" type="radio"/>
-                        <input onChange={(e) => handleChangeImpact(e, index)} name={`impact-${index}`} value="4" type="radio"/>
-                        <input onChange={(e) => handleChangeImpact(e, index)} name={`impact-${index}`} value="5" type="radio"/>
+                    <div className='flex w-[15%] justify-around border-slate-300 pl-4 border-b-[1px]'>
+                        <div className="flex justify-center w-full border-l-[1px] bg-green-200 border-slate-300">
+                            <input onChange={(e) => props.handleChangeImpact(e, index)} name={`impact-${index}`} value="1" type="radio"/>
+                        </div>
+                        <div className="flex justify-center w-full border-l-[1px] bg-green-200 border-slate-300">
+                            <input onChange={(e) => props.handleChangeImpact(e, index)} name={`impact-${index}`} value="2" type="radio"/>
+                        </div>
+                        <div className="flex justify-center w-full border-l-[1px] bg-green-200 border-slate-300">
+                            <input onChange={(e) => props.handleChangeImpact(e, index)} name={`impact-${index}`} value="3" type="radio"/>
+                        </div>
+                        <div className="flex justify-center w-full border-l-[1px] bg-green-200 border-slate-300">
+                            <input onChange={(e) => props.handleChangeImpact(e, index)} name={`impact-${index}`} value="4" type="radio"/>
+                        </div>
+                        <div className="flex justify-center w-full border-l-[1px] bg-green-200 border-slate-300">
+                            <input onChange={(e) => props.handleChangeImpact(e, index)} name={`impact-${index}`} value="5" type="radio"/>
+                        </div>
                     </div>
-                    <div className='w-[20%] px-4 border-2'>
+                    <div className='flex items-center w-[25%] px-4 border-b-[1px]'>
                         {item.risk}
                     </div>
-                    <div className='w-[20%] flex gap-4 px-4 border-2'>
-                        <input onChange={(e) => handleChangeRisk(e, index)} name={`risk-${index}`} value="1" type="radio"/>
-                        <input onChange={(e) => handleChangeRisk(e, index)} name={`risk-${index}`} value="2" type="radio"/>
-                        <input onChange={(e) => handleChangeRisk(e, index)} name={`risk-${index}`} value="3" type="radio"/>
-                        <input onChange={(e) => handleChangeRisk(e, index)} name={`risk-${index}`} value="4" type="radio"/>
-                        <input onChange={(e) => handleChangeRisk(e, index)} name={`risk-${index}`} value="5" type="radio"/>
+                    <div className='flex w-[15%] justify-around border-slate-300 pr-4 border-b-[1px]'>
+                        <div className="flex justify-center w-full border-l-[1px] bg-orange-200 border-slate-300">
+                            <input onChange={(e) => props.handleChangeRisk(e, index)} name={`risk-${index}`} value="1" type="radio"/>
+                        </div>
+                        <div className="flex justify-center w-full border-l-[1px] bg-orange-200 border-slate-300">
+                            <input onChange={(e) => props.handleChangeRisk(e, index)} name={`risk-${index}`} value="2" type="radio"/>
+                        </div>
+                        <div className="flex justify-center w-full border-l-[1px] bg-orange-200 border-slate-300">
+                            <input onChange={(e) => props.handleChangeRisk(e, index)} name={`risk-${index}`} value="3" type="radio"/>
+                        </div>
+                        <div className="flex justify-center w-full border-l-[1px] bg-orange-200 border-slate-300">
+                            <input onChange={(e) => props.handleChangeRisk(e, index)} name={`risk-${index}`} value="4" type="radio"/>
+                        </div>
+                        <div className="flex justify-center w-full border-l-[1px] bg-orange-200 border-slate-300">
+                            <input onChange={(e) => props.handleChangeRisk(e, index)} name={`risk-${index}`} value="5" type="radio"/>
+                        </div>
                     </div>
                 </div>
             )
