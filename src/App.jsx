@@ -5,7 +5,7 @@ import Info from "./components/pages/Info"
 const App = () => {
 
 	return (
-    <div className="flex justify-center items-center min-h-[100vh] w-[100vw] bg-slate-200">
+    <div className="flex min-h-[100vh] w-[100vw] bg-slate-200">
       {/* <Info /> */}
       <TableContainer />
     </div>

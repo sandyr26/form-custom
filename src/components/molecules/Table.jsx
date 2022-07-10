@@ -7,7 +7,7 @@ export default function Table(props) {
   return (
     <div className='bg-white flex flex-col w-[98rem] my-8 drop-shadow-xl '>
         <RowHeader/>
-        <Row  handleChangeProbability={props.handleChangeProbability} handleChangeImpact={props.handleChangeImpact} handleChangeRisk={props.handleChangeRisk}/>
+        <Row  handleChangeProbability={props.handleChangeProbability} handleChangeImpact={props.handleChangeImpact} handleChangeSeverity={props.handleChangeSeverity}/>
     </div>
   )
 }

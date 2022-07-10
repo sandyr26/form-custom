@@ -9,7 +9,7 @@ export default function Row(props) {
             data.map((item,index) => 
                 <div key={index} className='flex flex-row'>
                     <div className='flex items-center w-[30%] h-16 px-4 border-b-[1px]'>
-                        {item.question}
+                        {item.risk}
                     </div>
                     <div className='flex w-[15%] justify-around border-slate-300 pr-4 border-b-[1px]'>
                         <div className="flex justify-center w-full border-l-[1px] bg-slate-200 border-slate-300">
@@ -46,23 +46,23 @@ export default function Row(props) {
                         </div>
                     </div>
                     <div className='flex items-center w-[25%] px-4 border-b-[1px]'>
-                        {item.risk}
+                        {item.severity}
                     </div>
                     <div className='flex w-[15%] justify-around border-slate-300 pr-4 border-b-[1px]'>
                         <div className="flex justify-center w-full border-l-[1px] bg-orange-200 border-slate-300">
-                            <input onChange={(e) => props.handleChangeRisk(e, index)} name={`risk-${index}`} value="1" type="radio"/>
+                            <input onChange={(e) => props.handleChangeSeverity(e, index)} name={`severity-${index}`} value="1" type="radio"/>
                         </div>
                         <div className="flex justify-center w-full border-l-[1px] bg-orange-200 border-slate-300">
-                            <input onChange={(e) => props.handleChangeRisk(e, index)} name={`risk-${index}`} value="2" type="radio"/>
+                            <input onChange={(e) => props.handleChangeSeverity(e, index)} name={`severity-${index}`} value="2" type="radio"/>
                         </div>
                         <div className="flex justify-center w-full border-l-[1px] bg-orange-200 border-slate-300">
-                            <input onChange={(e) => props.handleChangeRisk(e, index)} name={`risk-${index}`} value="3" type="radio"/>
+                            <input onChange={(e) => props.handleChangeSeverity(e, index)} name={`severity-${index}`} value="3" type="radio"/>
                         </div>
                         <div className="flex justify-center w-full border-l-[1px] bg-orange-200 border-slate-300">
-                            <input onChange={(e) => props.handleChangeRisk(e, index)} name={`risk-${index}`} value="4" type="radio"/>
+                            <input onChange={(e) => props.handleChangeSeverity(e, index)} name={`severity-${index}`} value="4" type="radio"/>
                         </div>
                         <div className="flex justify-center w-full border-l-[1px] bg-orange-200 border-slate-300">
-                            <input onChange={(e) => props.handleChangeRisk(e, index)} name={`risk-${index}`} value="5" type="radio"/>
+                            <input onChange={(e) => props.handleChangeSeverity(e, index)} name={`severity-${index}`} value="5" type="radio"/>
                         </div>
                     </div>
                 </div>

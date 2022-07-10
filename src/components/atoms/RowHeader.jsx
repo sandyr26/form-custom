@@ -3,7 +3,7 @@ import React from 'react'
 export default function RowHeader() {
   return (
     <div className='sticky top-0 flex px-8 pt-8 bg-white border-b-2'>
-        <div className='px-4 w-[30%]'></div>
+        <div className='px-4 w-[30%]'>Risk</div>
         <div className='flex flex-col items-center w-[15%] pr-4'>
             <div className='font-semibold'>Probability</div>
             <div className='flex w-full'>
