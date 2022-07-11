@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function RowHeaderMain() {
   return (
-    <div className='sticky top-0 flex px-8 py-8 mb-8 bg-white border-b-2 drop-shadow-xl'>
+    <div className='top-0 flex px-8 py-8 mb-8 bg-white border-b-2 drop-shadow-xl'>
         <div className='w-[100%] font-light'>
             <div>
                 <div className='text-xl font-normal pb-2'>Solar Photovoltaic System Value Chain: 1 - Development Stage</div>
