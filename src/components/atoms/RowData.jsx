@@ -1,12 +1,12 @@
 import React from "react"
-import data from "../../../data/data"
 
-export default function Row(props) {
+export default function RowData(props) {
+
 
   return (
     <div className=''>
         {
-            data.map((item,index) => 
+            props.data.map((item,index) => 
                 <div key={index} className='flex flex-col pb-8 px-8 pt-4 border-b-[1px] mb-8 bg-white drop-shadow-xl '>
                     <div className="flex">
                         <div className="w-[70%]">
@@ -16,7 +16,7 @@ export default function Row(props) {
                             </div>
                         </div>
                         <div className="flex flex-col w-[30%]">
-                            <div className="w-full h-6 mt-2 text-center">Probability</div>
+                            <div className="w-full h-6 mt-2 text-center">Probability of risk</div>
                             <div className='flex h-8 w-[100%] justify-around border-slate-300 border-b-[1px]'>
                                 <div className="flex justify-center w-full border-l-[1px] bg-slate-200 border-slate-300">
                                     <input onChange={(e) => props.handleChangeProbability(e, index)} name={`probability-${index}`} value="1" type="radio"/>
@@ -34,7 +34,7 @@ export default function Row(props) {
                                     <input onChange={(e) => props.handleChangeProbability(e, index)} name={`probability-${index}`} value="5" type="radio"/>
                                 </div>
                             </div>
-                            <div className="w-full h-6 mt-2 text-center">Impact</div>
+                            <div className="w-full h-6 mt-2 text-center">Impact on lifecycle</div>
                             <div className='flex h-8 w-[100%] justify-around border-slate-300 border-b-[1px]'>
                                 <div className="flex justify-center w-full border-l-[1px] bg-green-200 border-slate-300">
                                     <input onChange={(e) => props.handleChangeImpact(e, index)} name={`impact-${index}`} value="1" type="radio"/>
@@ -91,6 +91,9 @@ export default function Row(props) {
                 </div>
             )
         }
+        <div className="flex justify-center items-center w-full py-8">
+            <button className={`${props.nextIsVisible} border-[1px] px-16 py-4 bg-blue-300 hover:bg-blue-800 text-white`} onClick={props.handleClick}>Next</button>
+        </div>
     </div>
   )
 }

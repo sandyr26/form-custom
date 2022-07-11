@@ -1,15 +1,34 @@
 import React from 'react'
-import Row from '../atoms/RowData'
+import RowData from '../atoms/RowData'
 import RowHeader from '../atoms/RowHeader'
 import RowHeaderMain from '../atoms/RowHeaderMain'
 
+
+
 export default function Table(props) {
+
+  const [nextIsVisible, setNextIsVisible] = React.useState("block")
+    
+  const handleClick = () => {
+    props.dataName === "dataDevelopment" ?
+        ( props.updateCSV(), props.setData(props.dataDesign), props.setDataName("dataDesign")) : 
+          props.dataName === "dataDesign" ?
+            (props.updateCSV(), props.setData(props.dataManufacturing), props.setDataName("dataManufacturing")) :
+              props.dataName === "dataManufacturing" ?
+                (props.updateCSV(), props.setData(props.dataInstallation), props.setDataName("dataInstallation")) :
+                  props.dataName === "dataInstallation" ?
+                    (props.updateCSV(), props.setData(props.dataOperation), props.setDataName("dataOperation")) :
+                      props.dataName === "dataOperation" &&
+                        (props.updateCSV(), props.setData(props.dataDecommisioning), props.setDataName("dataDecommisioning"), setNextIsVisible("hidden"), props.setIsVisible("block"))
+}
 
   return (
     <div className='flex flex-col w-[56rem] my-8 '>
-        <RowHeaderMain />
+      <div className='sticky top-0 z-20 bg-white'>
+        <RowHeaderMain dataName={props.dataName}/>
         <RowHeader/>
-        <Row  handleChangeProbability={props.handleChangeProbability} handleChangeImpact={props.handleChangeImpact} handleChangeSeverity={props.handleChangeSeverity}/>
+      </div>
+        <RowData nextIsVisible={nextIsVisible} data={props.data} setData={props.setData} dataName={props.dataName} setDataName={props.setDataName} handleClick={handleClick} handleChangeProbability={props.handleChangeProbability} handleChangeImpact={props.handleChangeImpact} handleChangeSeverity={props.handleChangeSeverity}/>
     </div>
   )
 }
