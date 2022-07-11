@@ -5,7 +5,7 @@ import RowHeader from '../atoms/RowHeader'
 export default function Table(props) {
 
   return (
-    <div className='bg-white flex flex-col w-[98rem] my-8 drop-shadow-xl '>
+    <div className='flex flex-col w-[56rem] my-8 '>
         <RowHeader/>
         <Row  handleChangeProbability={props.handleChangeProbability} handleChangeImpact={props.handleChangeImpact} handleChangeSeverity={props.handleChangeSeverity}/>
     </div>
