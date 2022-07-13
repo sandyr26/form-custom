@@ -1,13 +1,11 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-export default function Info() {
+export default function 
+() {
   return (
-    <div className='w-[35rem] m-auto flex flex-col bg-white gap-8'>
-        <div className='flex flex-col justify-center items-center bg-blue-300 h-16 text-white'>
-            <div className='font-semibold'>Risk Assesment Survey</div>
-        </div>
-        <div className='flex flex-col gap-4 px-8'>
+    <div className='w-full h-full flex justify-center items-center'>
+        <div className='flex flex-col justify-center w-[250px] gap-4 px-8 bg-white'>
             <div className='flex flex-col w-[100%]'>
                 <label>Name / Company Name</label>
                 <input className='border-[1px] border-blue-200 pl-4 h-8' type="text"/>
@@ -38,7 +36,7 @@ export default function Info() {
                 </select>
             </div> */}
             <div className='flex justify-center pb-8 pt-4'>
-                <Link to="/form">
+                <Link to="/info">
                     <button className='text-center border-2 px-4 py-1 w-32 bg-blue-500 text-white hover:bg-blue-800'>Next</button>
                 </Link>
                 
