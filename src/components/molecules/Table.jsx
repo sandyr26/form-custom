@@ -8,19 +8,30 @@ import RowHeaderMain from '../atoms/RowHeaderMain'
 export default function Table(props) {
 
   const [nextIsVisible, setNextIsVisible] = React.useState("block")
-    
+  const [defaultChecked, setDefaultChecked] = React.useState(false)
+
+  const reset = () => {
+    console.log("after: " + props.data.length)
+    props.setProbability(new Array(50).fill(0))
+    props.setImpact(new Array(50).fill(0))
+    props.setSeverity(new Array(50).fill(0))
+    console.log("setting")
+    setDefaultChecked(false)
+    window.scrollTo(0, 0)
+  }
+
   const handleClick = () => {
     props.dataName === "dataDevelopment" ?
-        ( props.updateCSV(), props.setData(props.dataDesign), props.setDataName("dataDesign")) : 
+        ( props.updateCSV(), props.setData(props.dataDesign), props.setDataName("dataDesign"), reset()) : 
           props.dataName === "dataDesign" ?
-            (props.updateCSV(), props.setData(props.dataManufacturing), props.setDataName("dataManufacturing")) :
+            (props.updateCSV(), props.setData(props.dataManufacturing), props.setDataName("dataManufacturing"),reset()) :
               props.dataName === "dataManufacturing" ?
-                (props.updateCSV(), props.setData(props.dataInstallation), props.setDataName("dataInstallation")) :
+                (props.updateCSV(), props.setData(props.dataInstallation), props.setDataName("dataInstallation"),reset()) :
                   props.dataName === "dataInstallation" ?
-                    (props.updateCSV(), props.setData(props.dataOperation), props.setDataName("dataOperation")) :
+                    (props.updateCSV(), props.setData(props.dataOperation), props.setDataName("dataOperation"),reset()) :
                       props.dataName === "dataOperation" &&
-                        (props.updateCSV(), props.setData(props.dataDecommisioning), props.setDataName("dataDecommisioning"), setNextIsVisible("hidden"), props.setIsVisible("block"))
-}
+                        (props.updateCSV(), props.setData(props.dataDecommisioning), props.setDataName("dataDecommisioning"), reset(), setNextIsVisible("hidden"), props.setIsVisible("block"))
+  }
 
   return (
     <div className='flex flex-col w-[56rem] my-8 '>
@@ -28,7 +39,7 @@ export default function Table(props) {
         <RowHeaderMain dataName={props.dataName}/>
         <RowHeader/>
       </div>
-        <RowData nextIsVisible={nextIsVisible} data={props.data} setData={props.setData} dataName={props.dataName} setDataName={props.setDataName} handleClick={handleClick} handleChangeProbability={props.handleChangeProbability} handleChangeImpact={props.handleChangeImpact} handleChangeSeverity={props.handleChangeSeverity}/>
+        <RowData probabilityValue={props.probabilityValue} setDefaultChecked={setDefaultChecked} defaultChecked={defaultChecked} updateCSV={props.updateCSV} csvContent={props.csvContent} isVisible={props.isVisible} data={props.data} probability={props.probability} impact={props.impact} severity={props.severity} nextIsVisible={nextIsVisible} setData={props.setData} dataName={props.dataName} setDataName={props.setDataName} handleClick={handleClick} handleChangeProbability={props.handleChangeProbability} handleChangeImpact={props.handleChangeImpact} handleChangeSeverity={props.handleChangeSeverity}/>
     </div>
   )
 }

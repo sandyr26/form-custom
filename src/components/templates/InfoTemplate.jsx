@@ -1,25 +1,45 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Buttons from '../atoms/Buttons'
 import NavBar from '../molecules/NavBar'
 
 export default function InfoTemplate() {
   return (
-    <div>
+    <div className='bg-[#f4f7ff]'>
         <NavBar />
-        <div className='mx-64 py-16'>
-            <div className='font-bold text-xl pb-4'>
-                “Development of a Robust Risk Assessment Model for improving Solar Photovoltaic System Bankability in Mauritius” 
+        <div className='flex flex-col justify-center items-center py-16 w-full'>
+            <div className='w-[45rem] border-[2px] bg-white border-orange-300 px-16 py-12 drop-shadow-xl'>
+                <div className='font-bold text-xl pb-4'>
+                    Development of a Robust Risk Assessment Model for improving Solar Photovoltaic System Bankability in Mauritius
+                </div>
+                <div className='text-justify text-sm'>
+                    The project aims at developing a holistic risk management framework for improving solar PV bankability in Mauritius. It will allow a thorough investigation of inherent risks in all phases of a PV project cycle and will explore a multitude of relevant PV business models. This project will serve as a reference for all stakeholders and help in identifying and mitigating risks, improving technical reliability and soundness of PV projects, assessing the impact of risks on life cycle cost of PV systems, electricity generation, levelized cost of electricity (LCOE) and hence assess the risks associated with business models. The results will help in the development of a set of guidelines to assist stakeholders in the comprehensive risk management of existing and future PV installations, thus improving bankability of PV projects. This will help in the mitigation of risks in existing and new projects as well in the development of new types of business models. This research contributes to the  Sustainable Development Goals 7 and 9.
+                    <br/><br/>
+                    The survey has been created to help with the data collection of all risks occurring throughout the six stages of the project lifecycle. The stages and the stakeholders involved are shown in the infographic below:
+                </div>
+                <div className='flex justify-center items-center py-4'>
+                    <img src="../../../dist/assets/picture1.png" />
+                </div>
+                <div className='text-justify text-sm'>
+                    The stakeholders will be required to rate the probability of risks happening and their impact on the PV system life cycle as well as to share their opinion. The severity of the risks and impact are described in <b>Table 1</b> and <b>Table 2</b> respectively. This survey will be an essential part of the project to help develop a thorough set of guidelines for the risk management of PV systems. 
+                </div>
+                <div className='flex flex-col justify-center items-center py-4'>
+                    <img className='border-[1px] drop-shadow-md border-black' src="../../../dist/assets/picture2.png" />
+                    <div className='text-xs font-semibold pt-1'>Table 1</div>
+                </div>
+                <div className='flex flex-col justify-center items-center py-4'>
+                    <img className='border-[1px] drop-shadow-md border-black' src="../../../dist/assets/picture3.png" />
+                    <div className='text-xs font-semibold pt-1'>Table 2</div>
+                </div>
+                <div className='text-justify text-xs italic'>
+                    Any information/data/response provided will be treated in strict confidentiality and will under no circumstances be revealed to a third party.  The responses will be used solely for research purposes and all respondents will remain anonymous.
+                </div>
+                <div className='flex justify-center pt-10'>
+                    <Link to="/form">
+                        <Buttons>Next</Buttons>
+                    </Link>       
+                </div>
             </div>
-            Following the budget 2022, the Government of Mauritius has reaffirmed its commitment to the transition to a green economy. While small scale systems are normally self-funded by customers, other PV systems types require the owners to seek finance from a number of sources such as banks or other investors. Hence, bankability or acceptance of the project to the investor becomes critical. When assessing the investment-worthiness of a PV project, different financial stakeholders such as investors, lenders and insurers need to evaluate the impact and probability of investment risks differently depending on their investment goals. Risks have to be identified, quantified and mitigated both in existing and new PV installations. There are several challenges to address when assessing the viability of a PV project, such as the policy and regulatory instability locally and abroad, financial and bankability challenges, the need to integrate solar PV into electricity markets and systems in a fair and sustainable manner, technical reliability or the financial stability of PV investments which have to match established standards. The bankability of a PV project relies mainly on the technical soundness of the PV system and optimal operation of the system throughout the lifetime which is quantified by the levelised cost of electricity (LCOE) of the project. LCOE is one of the most widely accepted metrics for analyzing the cost-effectiveness of energy systems because it encompasses all of these factors, allowing for direct comparisons on a cost per unit energy basis. However, inherent risks in PV projects have an impact on the LCOE of the project and if the risks are not identified and mitigated, they would eventually render a project financially unsustainable. 
-            The project aims at developing a comprehensive risk management framework for improving solar PV bankability in Mauritius. It will allow a thorough investigation of inherent risks in all phases of a PV project cycle and will explore a multitude of relevant PV business models. This project will serve as a reference for all stakeholders and help in identifying and mitigating risks, improving technical reliability and soundness of PV projects, assessing the impact of risks on life cycle cost of PV systems, electricity generation, levelized cost of electricity (LCOE) and hence assess the risks associated with business models. A set of guidelines will be developed to assist stakeholders in the holistic risk management of existing and future PV installations, thus improving bankability of PV projects. This will help in the mitigation of risks in existing and new projects as well in the development of new types of business models. This research contributes to the Sustainable Development Goals 7 and 9 which are to ensure access to affordable, reliable, sustainable and modern energy for all and to build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation. 
-            The survey has been created to help with the data collection of all risks occurring during the different project lifecycle stages of a PV system namely: 1. Development, 2. Design, 3. Manufacturing/import, 4. Installation/commissioning, 5. Operation/ maintenance and 6. Decommissioning. The stakeholders will be required to rate the probability of risks and their impact on the project life cycle as well to have their comments. The feedback will be an essential
-            part of the project to help develop the comprehensive guidelines for the risk management of PV systems.
-
-        </div>
-        <div className='flex justify-center pb-8 pt-4'>
-            <Link to="/form">
-                <button className='text-center border-2 px-4 py-1 w-32 bg-blue-500 text-white hover:bg-blue-800'>Next</button>
-            </Link>       
         </div>
     </div>
   )

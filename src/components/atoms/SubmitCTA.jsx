@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios';
+import Buttons from './Buttons';
 
 export default function SubmitCTA(props) {
 
@@ -61,9 +62,7 @@ export default function SubmitCTA(props) {
 
   return (
     <div>
-        <button onClick={exportFile} className={`${props.isVisible} border-[1px] px-16 py-4 bg-blue-300 hover:bg-blue-800 text-white`}>
-            Submit
-        </button>
+        <Buttons onClick={exportFile} state={props.isVisible}>Submit</Buttons>
     </div>
   )
 }

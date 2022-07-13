@@ -25,9 +25,10 @@ export default function TableContainer() {
     const handleChangeProbability = (e, index) => {
       const updatedCheckState = probability.map((item, i) => 
           i === index ? e.target.value : item
-      )
+          )
       setProbability(updatedCheckState)
     }
+
     const handleChangeImpact = (e, index) => {
       const updatedCheckState = impact.map((item, i) => 
           i === index ? e.target.value : item
@@ -44,24 +45,21 @@ export default function TableContainer() {
     const [csvContent, setcsvContent] = useState("data:text/csv;charset=utf-8,Phase, Risk Number, Risk, Probability, Impact, Consequence Number, Consequence Risk \r\n")
 
     const updateCSV = () => {
-      console.log("updating")
       var updatedList = csvContent
+      console.log("Updating")
+      setcsvContent(updatedList)
       data.map((item, index) =>
         updatedList += dataName + ", " + item.risk_id + ", " + item.risk + "," + probability[index] + ", " + impact[index] + ", " + item.severity_id + ", " + severity[index] + "\r\n"
       )
       setcsvContent(updatedList)
-      setProbability(new Array(data.length).fill(0))
-      setImpact(new Array(data.length).fill(0))
-      setSeverity(new Array(data.length).fill(0))
     }
   
     
   return (
     <div className='w-full flex flex-col items-center'>
         <NavBar />
-        <Table updateCSV={updateCSV} data={data} setData={setData} dataName={dataName} setDataName={setDataName} dataDesign={dataDesign} dataManufacturing={dataManufacturing} dataInstallation={dataInstallation} dataOperation={dataOperation} dataDecommisioning={dataDecommisioning} setIsVisible={setIsVisible} handleChangeProbability={handleChangeProbability} handleChangeImpact={handleChangeImpact} handleChangeSeverity={handleChangeSeverity}/>
-        <SubmitCTA updateCSV={updateCSV} csvContent={csvContent} isVisible={isVisible} data={data} probability={probability} impact={impact} severity={severity}/>
-        {/* <Select /> */}
+        {/* <button onClick={console.log(data)}>Click</button> */}
+        <Table updateCSV={updateCSV} csvContent={csvContent} isVisible={isVisible} probability={probability} impact={impact} severity={severity} data={data} setData={setData} dataName={dataName} setDataName={setDataName} dataDesign={dataDesign} dataManufacturing={dataManufacturing} dataInstallation={dataInstallation} dataOperation={dataOperation} dataDecommisioning={dataDecommisioning} setIsVisible={setIsVisible} handleChangeProbability={handleChangeProbability} handleChangeImpact={handleChangeImpact} handleChangeSeverity={handleChangeSeverity} setProbability={setProbability} setImpact={setImpact} setSeverity={setSeverity}/>
         <Footer />
     </div>
   )

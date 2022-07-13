@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function RowHeader() {
   return (
-    <div className='top-0 flex px-8 pt-4 bg-[#2ec7f2] border-b-2'>
+    <div className='top-0 flex px-8 pt-4 bg-orange-100 border-b-2'>
         <div className='w-[70%] font-semibold'>
             <div className='h-8'></div>
             <div>Type of risk</div>

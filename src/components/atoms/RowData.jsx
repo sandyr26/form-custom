@@ -1,4 +1,6 @@
 import React from "react"
+import Buttons from "./Buttons"
+import SubmitCTA from "./SubmitCTA"
 
 export default function RowData(props) {
 
@@ -19,37 +21,37 @@ export default function RowData(props) {
                             <div className="w-full h-6 mt-2 text-center">Probability of risk</div>
                             <div className='flex h-8 w-[100%] justify-around border-slate-300 border-b-[1px]'>
                                 <div className="flex justify-center w-full border-l-[1px] bg-slate-200 border-slate-300">
-                                    <input onChange={(e) => props.handleChangeProbability(e, index)} name={`probability-${index}`} value="1" type="radio"/>
+                                    <input required onChange={(e) => props.handleChangeProbability(e, index)} checked={props.probability[index] === "1" } name={`probability-${index}`} value="1" type="radio"/>
                                 </div>
                                 <div className="flex justify-center w-full border-l-[1px] bg-slate-200 border-slate-300">
-                                    <input onChange={(e) => props.handleChangeProbability(e, index)} name={`probability-${index}`} value="2" type="radio"/>
+                                    <input required onChange={(e) => props.handleChangeProbability(e, index)} checked={props.probability[index] === "2"}  name={`probability-${index}`} value="2" type="radio"/>
                                 </div>
                                 <div className="flex justify-center w-full border-l-[1px] bg-slate-200 border-slate-300">
-                                    <input onChange={(e) => props.handleChangeProbability(e, index)} name={`probability-${index}`} value="3" type="radio"/>
+                                    <input required onChange={(e) => props.handleChangeProbability(e, index)} checked={props.probability[index] === "3"}  name={`probability-${index}`} value="3" type="radio"/>
                                 </div>
                                 <div className="flex justify-center w-full border-l-[1px] bg-slate-200 border-slate-300">
-                                    <input onChange={(e) => props.handleChangeProbability(e, index)} name={`probability-${index}`} value="4" type="radio"/>
+                                    <input required onChange={(e) => props.handleChangeProbability(e, index)} checked={props.probability[index] === "4"}  name={`probability-${index}`} value="4" type="radio"/>
                                 </div>
                                 <div className="flex justify-center w-full border-l-[1px] border-r-[1px] bg-slate-200 border-slate-300">
-                                    <input onChange={(e) => props.handleChangeProbability(e, index)} name={`probability-${index}`} value="5" type="radio"/>
+                                    <input required onChange={(e) => props.handleChangeProbability(e, index)} checked={props.probability[index] === "5"}  name={`probability-${index}`} value="5" type="radio"/>
                                 </div>
                             </div>
                             <div className="w-full h-6 mt-2 text-center">Impact on lifecycle</div>
                             <div className='flex h-8 w-[100%] justify-around border-slate-300 border-b-[1px]'>
                                 <div className="flex justify-center w-full border-l-[1px] bg-green-200 border-slate-300">
-                                    <input onChange={(e) => props.handleChangeImpact(e, index)} name={`impact-${index}`} value="1" type="radio"/>
+                                    <input required onChange={(e) => props.handleChangeImpact(e, index)} checked={props.impact[index] === "1"} name={`impact-${index}`} value="1" type="radio"/>
                                 </div>
                                 <div className="flex justify-center w-full border-l-[1px] bg-green-200 border-slate-300">
-                                    <input onChange={(e) => props.handleChangeImpact(e, index)} name={`impact-${index}`} value="2" type="radio"/>
+                                    <input required onChange={(e) => props.handleChangeImpact(e, index)} checked={props.impact[index] === "2"} name={`impact-${index}`} value="2" type="radio"/>
                                 </div>
                                 <div className="flex justify-center w-full border-l-[1px] bg-green-200 border-slate-300">
-                                    <input onChange={(e) => props.handleChangeImpact(e, index)} name={`impact-${index}`} value="3" type="radio"/>
+                                    <input required onChange={(e) => props.handleChangeImpact(e, index)} checked={props.impact[index] === "3"} name={`impact-${index}`} value="3" type="radio"/>
                                 </div>
                                 <div className="flex justify-center w-full border-l-[1px] bg-green-200 border-slate-300">
-                                    <input onChange={(e) => props.handleChangeImpact(e, index)} name={`impact-${index}`} value="4" type="radio"/>
+                                    <input required onChange={(e) => props.handleChangeImpact(e, index)} checked={props.impact[index] === "4"} name={`impact-${index}`} value="4" type="radio"/>
                                 </div>
                                 <div className="flex justify-center w-full border-l-[1px] bg-green-200 border-slate-300">
-                                    <input onChange={(e) => props.handleChangeImpact(e, index)} name={`impact-${index}`} value="5" type="radio"/>
+                                    <input required onChange={(e) => props.handleChangeImpact(e, index)} checked={props.impact[index] === "5"} name={`impact-${index}`} value="5" type="radio"/>
                                 </div>
                             </div>
                         </div>
@@ -71,19 +73,19 @@ export default function RowData(props) {
                             <div className="w-full text-center h-6 mt-2">Severity</div>
                             <div className='flex h-8 w-[100%] justify-around border-slate-300 border-b-[1px]'>
                                 <div className="flex justify-center w-full border-l-[1px] bg-orange-200 border-slate-300">
-                                    <input onChange={(e) => props.handleChangeSeverity(e, index)} name={`severity-${index}`} value="1" type="radio"/>
+                                    <input required onChange={(e) => props.handleChangeSeverity(e, index)} checked={props.severity[index] === "1"} name={`severity-${index}`} value="1" type="radio"/>
                                 </div>
                                 <div className="flex justify-center w-full border-l-[1px] bg-orange-200 border-slate-300">
-                                    <input onChange={(e) => props.handleChangeSeverity(e, index)} name={`severity-${index}`} value="2" type="radio"/>
+                                    <input required onChange={(e) => props.handleChangeSeverity(e, index)} checked={props.severity[index] === "2"} name={`severity-${index}`} value="2" type="radio"/>
                                 </div>
                                 <div className="flex justify-center w-full border-l-[1px] bg-orange-200 border-slate-300">
-                                    <input onChange={(e) => props.handleChangeSeverity(e, index)} name={`severity-${index}`} value="3" type="radio"/>
+                                    <input required onChange={(e) => props.handleChangeSeverity(e, index)} checked={props.severity[index] === "3"} name={`severity-${index}`} value="3" type="radio"/>
                                 </div>
                                 <div className="flex justify-center w-full border-l-[1px] bg-orange-200 border-slate-300">
-                                    <input onChange={(e) => props.handleChangeSeverity(e, index)} name={`severity-${index}`} value="4" type="radio"/>
+                                    <input required onChange={(e) => props.handleChangeSeverity(e, index)} checked={props.severity[index] === "4"} name={`severity-${index}`} value="4" type="radio"/>
                                 </div>
                                 <div className="flex justify-center w-full border-l-[1px] bg-orange-200 border-slate-300">
-                                    <input onChange={(e) => props.handleChangeSeverity(e, index)} name={`severity-${index}`} value="5" type="radio"/>
+                                    <input required onChange={(e) => props.handleChangeSeverity(e, index)} checked={props.severity[index] === "5"} name={`severity-${index}`} value="5" type="radio"/>
                                 </div>
                             </div>
                         </div>
@@ -92,7 +94,8 @@ export default function RowData(props) {
             )
         }
         <div className="flex justify-center items-center w-full py-8">
-            <button className={`${props.nextIsVisible} border-[1px] px-16 py-4 bg-blue-300 hover:bg-blue-800 text-white`} onClick={props.handleClick}>Next</button>
+            <Buttons onClick={props.handleClick} state={props.nextIsVisible}>Next</Buttons>
+            <SubmitCTA updateCSV={props.updateCSV} csvContent={props.csvContent} isVisible={props.isVisible} data={props.data} probability={props.probability} impact={props.impact} severity={props.severity}/>
         </div>
     </div>
   )
