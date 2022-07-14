@@ -94,8 +94,7 @@ export default function RowData(props) {
             )
         }
         <div className="flex justify-center items-center w-full py-8">
-            <Buttons onClick={props.handleClick} state={props.nextIsVisible}>Next</Buttons>
-            <SubmitCTA updateCSV={props.updateCSV} csvContent={props.csvContent} isVisible={props.isVisible} data={props.data} probability={props.probability} impact={props.impact} severity={props.severity}/>
+            <Buttons setGetRole={props.setGetRole} onClick={props.handleClick}>Next</Buttons>
         </div>
     </div>
   )

@@ -7,7 +7,6 @@ import RowHeaderMain from '../atoms/RowHeaderMain'
 
 export default function Table(props) {
 
-  const [nextIsVisible, setNextIsVisible] = React.useState("block")
   const [defaultChecked, setDefaultChecked] = React.useState(false)
 
   const reset = () => {
@@ -20,6 +19,21 @@ export default function Table(props) {
     window.scrollTo(0, 0)
   }
 
+  const upload = () => {
+  const slicing = props.uploadData.slice(0,-1)
+    $.ajax({
+        url: "https://asterloto.com/form-custom/upload.php",
+        type: "POST",
+        data: {
+            data: slicing,  
+        }
+    })
+}
+
+const exportFile = () => {
+    upload()
+    window.open(encodeURI(props.csvContent))
+}
   const handleClick = () => {
     props.dataName === "dataDevelopment" ?
         ( props.updateCSV(), props.setData(props.dataDesign), props.setDataName("dataDesign"), reset()) : 
@@ -29,8 +43,10 @@ export default function Table(props) {
                 (props.updateCSV(), props.setData(props.dataInstallation), props.setDataName("dataInstallation"),reset()) :
                   props.dataName === "dataInstallation" ?
                     (props.updateCSV(), props.setData(props.dataOperation), props.setDataName("dataOperation"),reset()) :
-                      props.dataName === "dataOperation" &&
-                        (props.updateCSV(), props.setData(props.dataDecommisioning), props.setDataName("dataDecommisioning"), reset(), setNextIsVisible("hidden"), props.setIsVisible("block"))
+                      props.dataName === "dataOperation" ?
+                        (props.updateCSV(), props.setData(props.dataDecommisioning), props.setDataName("dataDecommisioning"), reset()) :
+                          props.dataName === "dataDecommisioning" &&
+                            (props.updateCSV(), exportFile())
   }
 
   return (
@@ -39,7 +55,7 @@ export default function Table(props) {
         <RowHeaderMain dataName={props.dataName}/>
         <RowHeader/>
       </div>
-        <RowData probabilityValue={props.probabilityValue} setDefaultChecked={setDefaultChecked} defaultChecked={defaultChecked} updateCSV={props.updateCSV} csvContent={props.csvContent} isVisible={props.isVisible} data={props.data} probability={props.probability} impact={props.impact} severity={props.severity} nextIsVisible={nextIsVisible} setData={props.setData} dataName={props.dataName} setDataName={props.setDataName} handleClick={handleClick} handleChangeProbability={props.handleChangeProbability} handleChangeImpact={props.handleChangeImpact} handleChangeSeverity={props.handleChangeSeverity}/>
+        <RowData setGetRole={props.setGetRole} probabilityValue={props.probabilityValue} setDefaultChecked={setDefaultChecked} defaultChecked={defaultChecked} updateCSV={props.updateCSV} csvContent={props.csvContent}  data={props.data} probability={props.probability} impact={props.impact} severity={props.severity} setData={props.setData} dataName={props.dataName} setDataName={props.setDataName} handleClick={handleClick} handleChangeProbability={props.handleChangeProbability} handleChangeImpact={props.handleChangeImpact} handleChangeSeverity={props.handleChangeSeverity}/>
     </div>
   )
 }
