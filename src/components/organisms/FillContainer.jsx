@@ -10,7 +10,7 @@ export default function () {
 
   return (
     <div className='flex w-full h-full justify-center items-center'>
-        <div className='flex flex-col justify-center items-center w-[25rem] gap-6 px-12 py-8 bg-white border-[2px] border-orange-200 drop-shadow-xl'>
+        <div className='flex flex-col justify-center items-center lg:w-[25rem] w-[18rem] gap-6 px-12 py-8 bg-white border-[2px] border-orange-200 drop-shadow-xl'>
             <div className='align-left font-normal text-orange-500'>
                 Please Fill in
             </div>

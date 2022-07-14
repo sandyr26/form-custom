@@ -14,10 +14,10 @@
 	$sql = "INSERT INTO `form-custom` (`phase`, `risk_number`, `risk_name`, `probability`, `impact`, `consequence_number`, `consequence_name`, `timestamp`, `company_name`, `job_title`, `role_name`) VALUES $data;";
 
 	if (mysqli_query($conn, $sql)) {
-		echo json_encode(array("statusCode"=>200));
+		echo json_encode(200);
 	} 
 	else {
-		echo json_encode(array("statusCode Could not connect"=>201));
+		echo json_encode(201);
 	}
 	mysqli_close($conn);
 ?>

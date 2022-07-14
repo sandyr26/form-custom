@@ -1,9 +1,7 @@
 import {useState, useEffect} from 'react'
-import SubmitCTA from '../atoms/SubmitCTA'
 import Table from '../molecules/Table'
 import NavBar from '../molecules/NavBar';
 import Footer from '../molecules/Footer';
-import Select from '../atoms/Select';
 
 import dataDevelopment from "../../../data/dataDevelopment"
 import dataDesign from "../../../data/dataDesign"
@@ -20,6 +18,9 @@ export default function TableContainer(props) {
     const [impact, setImpact] = useState(new Array(data.length).fill(0));
     const [severity, setSeverity] = useState(new Array(data.length).fill(0));
   
+    const [csvContent, setCsvContent] = useState("data:text/csv;charset=utf-8,Phase, Risk Number, Risk, Probability, Impact, Consequence Number, Consequence Risk \r\n")
+    const [uploadData, setUploadData] = useState("")
+
     const [getRole, setGetRole] = useState("")
 
     const handleChangeProbability = (e, index) => {
@@ -35,6 +36,7 @@ export default function TableContainer(props) {
       )
       setImpact(updatedCheckState)
     }
+
     const handleChangeSeverity = (e, index) => {
       const updatedCheckState = severity.map((item, i) => 
           i === index ? e.target.value : item
@@ -42,13 +44,9 @@ export default function TableContainer(props) {
       setSeverity(updatedCheckState)
     }
 
-    const [csvContent, setcsvContent] = useState("data:text/csv;charset=utf-8,Phase, Risk Number, Risk, Probability, Impact, Consequence Number, Consequence Risk \r\n")
-    const [uploadData, setUploadData] = useState("")
-    
     const updateCSV = () => {
       var updatedList = csvContent
       var updatedListUpload = uploadData
-      console.log(props.date)
 
       data.map((item, index) =>
         {
@@ -56,15 +54,15 @@ export default function TableContainer(props) {
           updatedListUpload += '("' + dataName + '", "' + item.risk_id + '", "' + item.risk + '", "' + probability[index] + '", "' + impact[index] + '", "' + item.severity_id + '", "' + severity[index] + '", "' + props.date + '", "' + 'company name' + '", "' + 'job title' + '", "' + 'role name' + '"),'
         }
         )
-      setcsvContent(updatedList)
+      setCsvContent(updatedList)
       setUploadData(updatedListUpload)
     }
   
     
   return (
     <div className='w-full flex flex-col items-center'>
-        <NavBar />
-        <button onClick={console.log(getRole)}>Click</button>
+        {/* <NavBar /> */}
+        {/* <button onClick={console.log(getRole)}>Click</button> */}
         <Table uploadData={uploadData} setGetRole={setGetRole} updateCSV={updateCSV} csvContent={csvContent} probability={probability} impact={impact} severity={severity} data={data} setData={setData} dataName={dataName} setDataName={setDataName} dataDesign={dataDesign} dataManufacturing={dataManufacturing} dataInstallation={dataInstallation} dataOperation={dataOperation} dataDecommisioning={dataDecommisioning} handleChangeProbability={handleChangeProbability} handleChangeImpact={handleChangeImpact} handleChangeSeverity={handleChangeSeverity} setProbability={setProbability} setImpact={setImpact} setSeverity={setSeverity}/>
         <Footer />
     </div>

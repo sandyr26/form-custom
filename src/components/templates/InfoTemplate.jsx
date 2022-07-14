@@ -8,7 +8,7 @@ export default function InfoTemplate() {
     <div className='bg-[#f4f7ff]'>
         <NavBar />
         <div className='flex flex-col justify-center items-center py-16 w-full'>
-            <div className='w-[45rem] border-[2px] bg-white border-orange-300 px-16 py-12 drop-shadow-xl'>
+            <div className='w-[18rem] md:w-[38rem] lg:w-[45rem] border-[2px] bg-white border-orange-300 px-8 lg:px-16 py-12 drop-shadow-xl'>
                 <div className='font-bold text-xl pb-4'>
                     Development of a Robust Risk Assessment Model for improving Solar Photovoltaic System Bankability in Mauritius
                 </div>
@@ -18,17 +18,17 @@ export default function InfoTemplate() {
                     The survey has been created to help with the data collection of all risks occurring throughout the six stages of the project lifecycle. The stages and the stakeholders involved are shown in the infographic below:
                 </div>
                 <div className='flex justify-center items-center py-4'>
-                    <img src="../../../dist/assets/picture1.png" />
+                    <img src="../../../src/assets/picture1.png" />
                 </div>
                 <div className='text-justify text-sm'>
                     The stakeholders will be required to rate the probability of risks happening and their impact on the PV system life cycle as well as to share their opinion. The severity of the risks and impact are described in <b>Table 1</b> and <b>Table 2</b> respectively. This survey will be an essential part of the project to help develop a thorough set of guidelines for the risk management of PV systems. 
                 </div>
                 <div className='flex flex-col justify-center items-center py-4'>
-                    <img className='border-[1px] drop-shadow-md border-black' src="../../../dist/assets/picture2.png" />
+                    <img className='border-[1px] drop-shadow-md border-black' src="../../../src/assets/picture2.png" />
                     <div className='text-xs font-semibold pt-1'>Table 1</div>
                 </div>
                 <div className='flex flex-col justify-center items-center py-4'>
-                    <img className='border-[1px] drop-shadow-md border-black' src="../../../dist/assets/picture3.png" />
+                    <img className='border-[1px] drop-shadow-md border-black' src="../../../src/assets/picture3.png" />
                     <div className='text-xs font-semibold pt-1'>Table 2</div>
                 </div>
                 <div className='text-justify text-xs italic'>
