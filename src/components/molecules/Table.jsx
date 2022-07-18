@@ -65,11 +65,11 @@ export default function Table(props) {
 
   return (
     <div className='flex flex-col w-full'>
-      <div className='sticky top-0 z-20 w-full bg-white'>
+      <div className='lg:sticky top-0 z-20 w-full bg-white'>
         <RowHeaderMain dataName={props.dataName}/>
         <RowHeader/>
       </div>
-      <div className='w-[48rem] m-auto'>
+      <div className='lg:w-[48rem] md:w-[48rem] m-auto'>
         <RowData exportFile={exportFile} nextState={nextState} submitState={submitState} setGetRole={props.setGetRole} probabilityValue={props.probabilityValue} setDefaultChecked={setDefaultChecked} defaultChecked={defaultChecked} updateCSV={props.updateCSV} csvContent={props.csvContent}  data={props.data} probability={props.probability} impact={props.impact} severity={props.severity} setData={props.setData} dataName={props.dataName} setDataName={props.setDataName} handleClick={handleClick} handleChangeProbability={props.handleChangeProbability} handleChangeImpact={props.handleChangeImpact} handleChangeSeverity={props.handleChangeSeverity}/>
       </div>
     </div>

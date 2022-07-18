@@ -52,30 +52,30 @@ export default function RowHeaderMain(props) {
     <div className='top-0 flex justify-center px-8 py-4 mb-0 bg-orange-300 border-b-2 drop-shadow-xl'>
         <div className='w-full lg:mx-16 font-light'>
             <div>
-                <div className='text-xl font-normal pb-2 text-white'>
+                <div className='lg:text-xl md:text-xl text-md font-bold pb-2 text-white'>
                     {title}
                 </div>
-                <div className='text-white'>
+                <div className='text-white text-sm'>
                     {subTitle}
                 </div>
-                <div className='lg:flex lg:flex-row md:flex md:flex-row flex flex-col gap-4 pt-4'>
+                <div className='lg:flex lg:flex-row md:flex md:flex-row flex flex-col lg:gap-4 md:gap-4 pt-4'>
                     <div className='flex lg:flex-col items-center justify-center border-2 bg-orange-500 text-white border-orange-300 w-full lg:w-1/6 h-18'>
-                        <div className='h-18 pt-2 text-center font-semibold'>1. Development</div>
+                        <div className='h-18 py-1 text-center text-sm font-semibold'>1. Development</div>
                     </div>
                     <div className={`flex flex-col items-center justify-center border-2 border-orange-300 bg-white w-full lg:w-1/6 h-18 ${designStyle}`}>
-                        <div className='h-18 pt-2 text-center font-extralight'>2. Design</div>
+                        <div className='h-18 py-1 text-center text-sm font-extralight'>2. Design</div>
                     </div>
                     <div className={`flex flex-col items-center justify-center border-2 border-orange-300 bg-white w-full lg:w-1/6 h-18  ${manufacturingStyle}`}>
-                        <div className='h-18 pt-2 text-center font-extralight'>3. Manufacturing/ Import</div>
+                        <div className='h-18 py-1 text-center text-sm font-extralight'>3. Manufacturing/ Import</div>
                     </div>
                     <div className={`flex flex-col items-center justify-center border-2 border-orange-300 bg-white w-full lg:w-1/6 h-18  ${installationStyle}`}>
-                        <div className='h-18 pt-2 text-center font-extralight'>4. Installation/ Commissioning</div>
+                        <div className='h-18 py-1 text-center text-sm font-extralight'>4. Installation/ Commissioning</div>
                     </div>
                     <div className={`flex flex-col items-center justify-center border-2 border-orange-300 bg-white w-full lg:w-1/6 h-18  ${operationStyle}`}>
-                        <div className='h-18 pt-2 text-center font-extralight'>5. Operation and Maintenance</div>
+                        <div className='h-18 py-1 text-center text-sm font-extralight'>5. Operation and Maintenance</div>
                     </div>
                     <div className={`flex flex-col items-center justify-center border-2 border-orange-300 bg-white w-full lg:w-1/6 h-18  ${decommisioningStyle}`}>
-                        <div className='h-18 pt-2 text-center'>6. Decomissioning</div>
+                        <div className='h-18 py-1 text-center text-sm'>6. Decomissioning</div>
                     </div>
                 </div>
             </div>
