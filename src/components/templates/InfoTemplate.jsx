@@ -31,6 +31,10 @@ export default function InfoTemplate() {
                     <img className='border-[1px] drop-shadow-md border-black' src="https://asterloto.com/form-custom/Picture3.png" />
                     <div className='text-xs font-semibold pt-1'>Table 2</div>
                 </div>
+                <div className='flex flex-col justify-center items-center py-4'>
+                    <img className='border-[1px] drop-shadow-md border-black' src="https://asterloto.com/form-custom/Picture4.jpg" />
+                    <div className='text-xs font-semibold pt-1'>Table 3</div>
+                </div>
                 <div className='text-justify text-xs italic'>
                     Any information/data/response provided will be treated in strict confidentiality and will under no circumstances be revealed to a third party.  The responses will be used solely for research purposes and all respondents will remain anonymous.
                 </div>

@@ -26,28 +26,20 @@ export default function () {
                 <label>Identify Role</label>
                 <select className='border-[1px] border-blue-200 pl-4 h-8' onChange={(e) => setRole(e.target.value)}>
                     <option>--- Select ---</option>
-                    <option>Project Management and Administration</option>
-                    <option>Project Management (Cost estimation)</option>
-                    <option>Project Management (Procurement)</option>
-                    <option>Financing and Commercial</option>
-                    <option>Financing and economic analyst</option>
-                    <option>Site and System design (Grid Integration)</option>
-                    <option>Site and System design (Survey report)</option>
+                    <option>Project Management</option>
+                    <option>Financing</option>
+                    <option>Site and System design</option>
                     <option>Technical advisers</option>
                     <option>Regulatory and Permitting</option>
                     <option>Design and Engineering(Civil, Structural, Electrical)</option>
-                    <option>Permission process</option>
-                    <option>Project/Construction management</option>
+                    <option>Construction management</option>
                     <option>Import/Export/Warehousing</option>
                     <option>Commissioning and testing</option>
                     <option>Training</option>
-                    <option>Inspection and Certification</option>
                     <option>Warranty</option>
-                    <option>Maintenance (System Maintenance)</option>
-                    <option>Maintenance (Quality Assurance)</option>
-                    <option>Maintenance (Waste management)</option>
+                    <option>Insurance</option>
+                    <option>Maintenance</option>
                     <option>Metering and Communications</option>
-                    <option>Property tax</option>
                 </select>
             </div>
             {/* <div className='flex flex-col'>
