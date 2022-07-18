@@ -32,7 +32,33 @@ export default function InfoTemplate() {
                     <div className='text-xs font-semibold pt-1'>Table 2</div>
                 </div>
                 <div className='flex flex-col justify-center items-center py-4'>
-                    <img className='border-[1px] drop-shadow-md border-black' src="https://asterloto.com/form-custom/Picture4.jpg" />
+                    <div className='w-1/2 border-[1px] drop-shadow-md border-black'>
+                        <div className='text-center font-bold text-xs py-1 underline bg-[#b5a6d4]'>Effect of Risk</div>
+                        <div className='flex w-full '>
+                            <div className='w-1/3 border-[1px] border-black text-center'>Rating</div>
+                            <div className='w-2/3 border-[1px] border-black text-center'>Opinion</div>
+                        </div>
+                        <div className='flex bg-[#16c626]'>
+                            <div className='w-1/3 text-center border-[1px] border-black'>1</div>
+                            <div className='w-2/3 text-center border-[1px] border-black'>Strongly agree</div>
+                        </div>
+                        <div className='flex bg-[#6da84c]'>
+                            <div className='w-1/3 text-center border-[1px] border-black'>2</div>
+                            <div className='w-2/3 text-center border-[1px] border-black'>Agree</div>
+                        </div>
+                        <div className='flex bg-[#ffff01]'>
+                            <div className='w-1/3 text-center border-[1px] border-black'>3</div>
+                            <div className='w-2/3 text-center border-[1px] border-black'>Neither agree/ disagree</div>
+                        </div>
+                        <div className='flex bg-[#cd4126]'>
+                            <div className='w-1/3 text-center border-[1px] border-black'>4</div>
+                            <div className='w-2/3 text-center border-[1px] border-black'>Disagree</div>
+                        </div>
+                        <div className='flex bg-[#fe0000]'>
+                            <div className='w-1/3 text-center border-[1px] border-black'>5</div>
+                            <div className='w-2/3 text-center border-[1px] border-black'>Strongly disagree</div>
+                        </div>
+                    </div>
                     <div className='text-xs font-semibold pt-1'>Table 3</div>
                 </div>
                 <div className='text-justify text-xs italic'>

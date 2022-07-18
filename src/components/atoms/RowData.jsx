@@ -10,7 +10,7 @@ export default function RowData(props) {
             props.data.map((item,index) => 
                 <div key={index} className='flex flex-col lg:flex lg:flex-col md:flex md:flex-col pb-8 px-8 pt-4 border-b-[1px] mb-8 bg-white drop-shadow-xl '>
                     <div className="lg:flex flex">
-                        <div className="lg:w-[70%] md:w-[70%] w-full">
+                        <div className="lg:w-[70%] md:w-[70%] w-full pr-8">
                             <div className="h-6 mt-2"></div>
                             <div className='flex w-[100%] h-8'>
                                 {item.risk}
@@ -56,11 +56,11 @@ export default function RowData(props) {
                         </div>
                     </div>
                     <div className="flex">
-                        <div className="w-[70%]">
+                        <div className="w-[70%] pr-8">
                             <div className="font-extralight h-6 mt-2">
                             </div>
                             <div className='flex flex-col w-[100%]'>
-                                <div className="font-extralight h-6">
+                                <div className="font-extralight h-6 italic text-sm">
                                     Do you agree that the risk may cause the following:
                                 </div>
                                 <div>
@@ -69,7 +69,7 @@ export default function RowData(props) {
                             </div>
                         </div>
                         <div className="w-[30%]">
-                            <div className="w-full text-center h-6 mt-2">Severity</div>
+                            <div className="w-full text-center h-6 mt-2"></div>
                             <div className='flex h-8 w-[100%] justify-around border-slate-300 border-b-[1px]'>
                                 <div className="flex justify-center w-full border-l-[1px] bg-orange-200 border-slate-300">
                                     <input required onChange={(e) => props.handleChangeSeverity(e, index)} checked={props.severity[index] === "1"} name={`severity-${index}`} value="1" type="radio"/>
@@ -86,6 +86,10 @@ export default function RowData(props) {
                                 <div className="flex justify-center w-full border-l-[1px] bg-orange-200 border-slate-300">
                                     <input required onChange={(e) => props.handleChangeSeverity(e, index)} checked={props.severity[index] === "5"} name={`severity-${index}`} value="5" type="radio"/>
                                 </div>
+                            </div>
+                            <div className="flex justify-between font-extralight text-[10px] pt-1 leading-[9px]">
+                                <div>Strongly <br/>Agree</div>
+                                <div className="text-right">Strongly <br/>Disagree</div>
                             </div>
                         </div>
                     </div>
