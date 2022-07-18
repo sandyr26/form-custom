@@ -61,8 +61,6 @@ export default function TableContainer(props) {
     
   return (
     <div className='w-full flex flex-col items-center'>
-        {/* <NavBar /> */}
-        {/* <button onClick={console.log(getRole)}>Click</button> */}
         <Table uploadData={uploadData} setGetRole={setGetRole} updateCSV={updateCSV} csvContent={csvContent} probability={probability} impact={impact} severity={severity} data={data} setData={setData} dataName={dataName} setDataName={setDataName} dataDesign={dataDesign} dataManufacturing={dataManufacturing} dataInstallation={dataInstallation} dataOperation={dataOperation} dataDecommisioning={dataDecommisioning} handleChangeProbability={handleChangeProbability} handleChangeImpact={handleChangeImpact} handleChangeSeverity={handleChangeSeverity} setProbability={setProbability} setImpact={setImpact} setSeverity={setSeverity}/>
         <Footer />
     </div>
