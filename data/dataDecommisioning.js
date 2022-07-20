@@ -1,75 +1,45 @@
 export default 
 [
   {
-    "risk_id": "S20",
-    "risk": "Disposal or recycling of PV systems can lead to exposure to chemicals",
-    "severity_id": "C26",
-    "severity": "May cause legal actions to be taken against stakeholders, delays. Financial loss and reputational risk as well as health risks and environmental risks  "
+     "risk_id": "T8",
+      "risk": "Health and safety risks during disassembly of solar panels (health and safety measures not respected including not wearing safety gears or being reckless on site)",
+      "severity_id": "C33",
+      "severity": "Can cause casualty. May also cause financial loss and impact reputation of organisation"
   },
   {
-    "risk_id": "T8",
-    "risk": "Health and safety risks during disassembly of solar panels ",
-    "severity_id": "C33",
-    "severity": "Can cause fatal casualty/health and safety risks. May also cause financial loss and reputational risk"
+     "risk_id": "S21",
+      "risk": "No waste management plan has been set up (Might end up with piles of old and broken solar panels)",
+      "severity_id": "C26",
+      "severity": "Legal actions may be taken. Also causing financial loss, reputational damage as well as affecting health and the environment"
   },
   {
-    "risk_id": "S16",
-    "risk": "The feasibility of decommissioning options (removal or disposal of the PV system)",
-    "severity_id": "C26",
-    "severity": "May cause legal actions to be taken against stakeholders, delays. Financial loss and reputational risk as well as health risks and environmental risks  "
+     "risk_id": "S5",
+      "risk": "Social risks (Public opinion on the state of the land after handback period in case land has been destroyed or polluted)",
+      "severity_id": "C26",
+      "severity": "Legal actions may be taken. Also causing financial loss, reputational damage as well as affecting health and the environment"
   },
   {
-    "risk_id": "S21",
-    "risk": "No waste management plan has been set up",
-    "severity_id": "C26",
-    "severity": "May cause legal actions to be taken against stakeholders, delays. Financial loss and reputational risk as well as health risks and environmental risks  "
+     "risk_id": "S7",
+      "risk": "Pollution risk (No recycling or disposal plan for the PV panels , hence over the years, several PV panels have been left on site causing pollution)",
+      "severity_id": "C26",
+      "severity": "Legal actions may be taken. Also causing financial loss, reputational damage as well as affecting health and the environment"
   },
   {
-    "risk_id": "F17",
-    "risk": "Difficult to fund working capital because banks are hesitant to lend to rural entrepreneurs",
-    "severity_id": "C36",
-    "severity": "No training of workforce and cause a lack of exposure to new technologies. Growth and development of the PV system is hindered"
+     "risk_id": "S22",
+      "risk": "Site-restoration requirements (No decommissioning plan in place, therefore no budget has been allocated for site restoration)",
+      "severity_id": "C26",
+      "severity": "Legal actions may be taken. Also causing financial loss, reputational damage as well as affecting health and the environment"
   },
   {
-    "risk_id": "P26",
-    "risk": "Lack of regulatory and legal framework",
-    "severity_id": "C37",
-    "severity": "Can lead to reputational risk and sanctions from the government. Hence financial loss and bad publicity"
+     "risk_id": "F44",
+      "risk": "Condition At Handback Risk-The risk of deterioration of the project assets/land during the life of the PV plant and the risk that the project assets/land are not in the contractually required condition at the time of handback to the Contracting Authority.",
+      "severity_id": "C41",
+      "severity": "Causes financial loss"
   },
   {
-    "risk_id": "T124",
-    "risk": "The organizational structure and human resources",
-    "severity_id": "C43",
-    "severity": "A poor organized organization structure means that there will be low productivity, less delegation of work, no incentives provided and centralized decisions. Causing partnering and strategic risks"
-  },
-  {
-    "risk_id": "S5",
-    "risk": "Public opinion on the presence of a PV plant (can be considered as an eye-sore)",
-    "severity_id": "C39",
-    "severity": "Reputational risk"
-  },
-  {
-    "risk_id": "T99",
-    "risk": "Security risks",
-    "severity_id": "C40",
-    "severity": "Lack of security can lead to vandalism of PV panels hence financial loss"
-  },
-  {
-    "risk_id": "S7",
-    "risk": "Obtaining environmental consents",
-    "severity_id": "C26",
-    "severity": "May cause legal actions to be taken against stakeholders, delays. Financial loss and reputational risk as well as health risks and environmental risks  "
-  },
-  {
-    "risk_id": "S13",
-    "risk": "Health factors",
-    "severity_id": "C33",
-    "severity": "Can cause health and safety issues as well as performance issues leading to reputational and financial risk"
-  },
-  {
-    "risk_id": "S22",
-    "risk": "Site-restoration requirements",
-    "severity_id": "C26",
-    "severity": "May cause legal actions to be taken against stakeholders, delays. Financial loss and reputational risk as well as health risks and environmental risks  "
+     "risk_id": "F14",
+      "risk": "Insurance risks (no insurance coverage for decommissioning phase)",
+      "severity_id": "C41",
+      "severity": "Causes financial loss"
   }
 ]

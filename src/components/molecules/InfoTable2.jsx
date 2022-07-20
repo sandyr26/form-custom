@@ -36,7 +36,7 @@ export default function InfoTable2(props) {
                 <div className='w-2/4 border-l-[1px] border-black px-2 bg-white'>{props.desc5}</div>
             </div>
         </div>
-        <div className='text-xs font-semibold pt-1'>Table 3</div>
+        <div className='text-xs font-semibold pt-1'>Table {props.tableNumber}</div>
     </div>
   )
 }

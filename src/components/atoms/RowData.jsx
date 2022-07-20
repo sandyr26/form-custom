@@ -10,12 +10,12 @@ export default function RowData(props) {
             props.data.map((item,index) => 
                 <div key={index} className='flex flex-col lg:flex lg:flex-col md:flex md:flex-col w-screen lg:w-full md:w-full pb-8 px-8 pt-4 border-b-[1px] mb-8 bg-white drop-shadow-xl '>
                     <div className="lg:flex md:flex">
-                        <div className="lg:w-[70%] md:w-[70%] w-full lg:pr-8 md:pr-8 lg:pt-9 md:pt-9">
+                        <div className="lg:w-[60%] md:w-[60%] w-full lg:pr-8 md:pr-8 lg:pt-9 md:pt-9">
                             <div className='flex font-semibold w-[100%] lg:h-8 md:h-8 text-md leading-[15px]'>
                                 {index + 1}.(a) {item.risk}
                             </div>
                         </div>
-                        <div className="lg:flex lg:flex-col md:flex md:flex-col flex flex-col lg:w-[30%] md:w-[30%]">
+                        <div className="lg:flex lg:flex-col md:flex md:flex-col flex flex-col lg:w-[40%] md:w-[40%]">
                             <div className="w-full h-6 mt-2 text-center italic text-sm">Probability of risk</div>
                             <div className='flex h-8 w-[100%] justify-around border-slate-300 border-b-[1px]'>
                                 <div className="flex justify-center w-full border-l-[1px] bg-custom1 border-slate-300">
@@ -41,7 +41,7 @@ export default function RowData(props) {
                                 <div className="w-[20%] text-center leading-[9px] pt-1">Occasional</div>
                                 <div className="w-[20%] text-center leading-[9px] pt-1">Frequent</div>
                             </div>
-                            <div className="w-full h-6 mt-2 text-center italic text-sm">Impact on lifecycle</div>
+                            <div className="w-full h-6 mt-2 text-center italic text-sm">Impact on project phase</div>
                             <div className='flex h-8 w-[100%] justify-around border-slate-300 border-b-[1px]'>
                                 <div className="flex justify-center w-full border-l-[1px] bg-custom1 border-slate-300">
                                     <input required onChange={(e) => props.handleChangeImpact(e, index)} checked={props.impact[index] === "1"} name={`impact-${index}`} value="1" type="radio"/>
@@ -71,7 +71,7 @@ export default function RowData(props) {
                     <div className="lg:hidden md:hidden border-t-[1px] h-1 mt-8 mb-4">
                     </div>
                     <div className="lg:flex md:flex">
-                        <div className="lg:w-[70%] md:w-[70%] w-full lg:pr-8 md:pr-8">
+                        <div className="lg:w-[60%] md:w-[60%] w-full lg:pr-8 md:pr-8">
                             <div className="font-extralight lg:h-6 md:h-6 lg:mt-2 md:mt-2">
                             </div>
                             <div className='flex flex-col w-[100%]'>
@@ -83,8 +83,9 @@ export default function RowData(props) {
                                 </div>
                             </div>
                         </div>
-                        <div className="lg:w-[30%] md:w-[30%] w-full">
+                        <div className="lg:w-[40%] md:w-[40%] w-full">
                             <div className="w-full text-center h-6 mt-2"></div>
+                            <div className="w-full h-6 text-center italic text-sm">Consequence of stated risk</div>
                             <div className='flex h-8 w-[100%] justify-around border-slate-300 border-b-[1px]'>
                                 <div className="flex justify-center w-full border-l-[1px] bg-custom1 border-slate-300">
                                     <input required onChange={(e) => props.handleChangeSeverity(e, index)} checked={props.severity[index] === "1"} name={`severity-${index}`} value="1" type="radio"/>
