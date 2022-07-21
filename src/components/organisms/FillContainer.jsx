@@ -41,20 +41,21 @@ export default function () {
                 <label htmlFor='role'>Identify Role</label>
                 <select placeholder='sss' id="role" className='border-[1px] border-blue-200 pl-4 h-8' onChange={(e) => setRole(e.target.value)}>
                     <option disabled selected hidden>Please Choose...</option>
-                    <option>Project management</option>
                     <option>Consultant</option>
-                    <option>Financial institutions(including Banks)</option>
-                    <option>Regulatory institutions and Permitting</option>
-                    <option>Property owner/ Building tenant/ Real Estate Broker</option>
-                    <option>Engineering</option>
                     <option>Construction management</option>
-                    <option>PV System design</option>
+                    <option>Engineering</option>
                     <option>Finance team</option>
-                    <option>Manufacturers/ Suppliers</option>
+                    <option>Financial institutions(including Banks)</option>
                     <option>Importers/Warehousing/Logistics</option>
                     <option>Installation,testing and Commissioning</option>
                     <option>Insurance providers</option>
+                    <option>Manufacturers/ Suppliers</option>
                     <option>Operation and Maintenance</option>
+                    <option>Project management</option>
+                    <option>Property owner/ Building tenant/ Real Estate Broker</option>
+                    <option>PV System design</option>
+                    <option>Regulatory institutions and Permitting</option>
+                    <option>Training institutions</option>
                     <option>Other</option>
                 </select>
             </div>
