@@ -18,7 +18,7 @@ export default function TableContainer(props) {
     const [impact, setImpact] = useState(new Array(data.length).fill(0));
     const [severity, setSeverity] = useState(new Array(data.length).fill(0));
   
-    const [csvContent, setCsvContent] = useState("data:text/csv;charset=utf-8,Phase, Risk Number, Risk, Probability, Impact, Consequence Number, Consequence Risk \r\n")
+    const [csvContent, setCsvContent] = useState("data:text/csv;charset=utf-8,Phase, Risk Number, Risk, Probability, Impact, Consequence Number, Consequence Risk, Name/ Company Name, Job Title, Role \r\n")
     const [uploadData, setUploadData] = useState("")
 
     const [getRole, setGetRole] = useState("")
@@ -50,14 +50,15 @@ export default function TableContainer(props) {
 
       data.map((item, index) =>
         {
-          updatedList += dataName + ", " + item.risk_id + ", " + item.risk + "," + probability[index] + ", " + impact[index] + ", " + item.severity_id + ", " + severity[index] + "\r\n"
-          updatedListUpload += '("' + dataName + '", "' + item.risk_id + '", "' + item.risk + '", "' + probability[index] + '", "' + impact[index] + '", "' + item.severity_id + '", "' + severity[index] + '", "' + props.date + '", "' + 'company name' + '", "' + 'job title' + '", "' + 'role name' + '"),'
+          updatedList += dataName + ", " + item.risk_id + ', \"' + item.risk + '\", ' + probability[index] + ", " + impact[index] + ", " + item.severity_id + ", " + severity[index] + ", '" + props.companyName + "', '" + props.jobTitle + "', '" + props.role + "'\r\n"
+          updatedListUpload += '("' + dataName + '", "' + item.risk_id + '", "' + item.risk + '", "' + probability[index] + '", "' + impact[index] + '", "' + item.severity_id + '", "' + severity[index] + '", "' + props.date + '", "' + props.companyName + '", "' + props.jobTitle + '", "' + props.role + '"),'
         }
         )
       setCsvContent(updatedList)
       setUploadData(updatedListUpload)
     }
   
+  console.log(props)
     
   return (
     <div className='w-full flex flex-col items-center'>

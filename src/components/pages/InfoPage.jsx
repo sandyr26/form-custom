@@ -1,18 +1,16 @@
 import React from 'react'
 import InfoTemplate from '../templates/InfoTemplate'
-import FillContainer from '../organisms/FillContainer'
-import { Link, useParams, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 export default function InfoPage(props) {
-
-  const {type} = useParams()
-  // const stateParamVal = useLocation().state.roleValue
-  console.log(type)
-  // console.log(stateParamVal)
-
+  const location = useLocation()
+  const { role } = location.state
+  const { jobTitle } = location.state
+  const { companyName } = location.state
+  
   return (
-    <div>        
-      <InfoTemplate />
+    <div>       
+      <InfoTemplate role={role} jobTitle={jobTitle} companyName={companyName} />
     </div>
   )
 }

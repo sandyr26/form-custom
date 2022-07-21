@@ -45,7 +45,7 @@ export default function Table(props) {
 
   const exportFile = () => {
     upload()
-    window.open(encodeURI(props.csvContent))
+    // window.open(encodeURI(props.csvContent))
   }
 
   const handleClick = () => {

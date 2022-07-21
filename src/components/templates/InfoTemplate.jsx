@@ -6,7 +6,7 @@ import InfoTable2 from '../molecules/InfoTable2'
 import NavBar from '../molecules/NavBar'
 import Infographic from '../atoms/Infographic'
 
-export default function InfoTemplate() {
+export default function InfoTemplate(props) {
   return (
     <div className='bg-[#f4f7ff]'>
         <NavBar />
@@ -74,7 +74,15 @@ export default function InfoTemplate() {
                     Any information/data/response provided will be treated in strict confidentiality and will under no circumstances be revealed to a third party. The responses will be used solely for research purposes and all respondents will remain anonymous.
                 </div>
                 <div className='flex justify-center pt-10'>
-                    <Link to="/form">
+                    <Link 
+                        to="/form" 
+                        state={
+                            {
+                                role: props.role,
+                                jobTitle: props.jobTitle,
+                                companyName: props.companyName
+                            }
+                        }>
                         <Buttons>Next</Buttons>
                     </Link>       
                 </div>

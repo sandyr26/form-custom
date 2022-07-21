@@ -12,13 +12,13 @@ export default function () {
     const [updatedRole, setUpdatedRole] = React.useState("")
 
     React.useEffect(() => {
-        console.log(role)
+        // console.log(role)
         role === 'Other' ? setOtherIsVisible("block") : setOtherIsVisible("hidden")
         setUpdatedRole(role)
     },[role])
 
     React.useEffect(() => {
-        console.log(updatedRole)
+        // console.log(updatedRole)
 
         setUpdatedRole(otherRole)
     },[otherRole])
@@ -72,11 +72,18 @@ export default function () {
                 </select>
             </div> */}
             <div className='flex justify-center pt-4'>
-                <Link to={{
-                    pathname: "/info",
-                    state: {roleValue: role}
-                }}>
-                    <Buttons role={role}>Next</Buttons>
+                <Link 
+                    to="/info" 
+                    state=
+                        {
+                            {
+                                role: updatedRole,
+                                companyName: companyName,
+                                jobTitle: jobTitle
+                            }
+                        }
+                >
+                    <Buttons>Next</Buttons>
                 </Link>
                 
             </div>
